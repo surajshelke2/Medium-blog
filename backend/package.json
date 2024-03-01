@@ -5,6 +5,8 @@
   },
   "dependencies": {
     "@prisma/client": "^5.10.2",
+    "@prisma/extension-accelerate": "^0.6.3",
+    "@tsndr/cloudflare-worker-jwt": "^2.5.1",
     "hono": "^4.0.5",
     "prisma": "^5.10.2"
   },
