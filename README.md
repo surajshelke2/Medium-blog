@@ -10,9 +10,9 @@ This repository contains the source code for a blog platform designed to publish
 - Responsive design for various devices
 
 ## Technologies Used
-- Frontend: React.js, Redux
-- Backend: Node.js, Express
-- Database: MongoDB
+- Frontend: React.js
+- Backend: Node.js, hono.hs
+- Database: Postgress
 
 ## Installation
 To get this project running on your local machine, follow these steps:
