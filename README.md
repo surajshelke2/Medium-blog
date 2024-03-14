@@ -21,17 +21,20 @@ Embark on your local development journey with these simple steps:
    ```bash
    git clone https://github.com/surajshelke2/Medium-blog.git
 
-2. Navigate to the project directory:
-cd Medium-blog
+2. **Navigate to the project directory**:
+    ```bash
+   cd Medium-blog
 
-3. Install dependencies:
-npm install
+3. **Install dependencies**:
+    ```bash
+   npm install
 
-4. Start the development server:
-npm run dev
+5. **Start the development server**:
+    ```bash
+   npm run dev
 
 
-## Contributing
+## 🤝 Contributing
 Contributions to improve the project are welcome. Please follow these steps to contribute:
 
 1. Fork the repository
@@ -41,7 +44,7 @@ Contributions to improve the project are welcome. Please follow these steps to c
 5. Push to the branch (`git push origin feature-branch`)
 6. Create a new Pull Request
 
-## License
+##📄 License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
 
 
