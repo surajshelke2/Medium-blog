@@ -1,0 +1,78 @@
+/* Quote.css */
+.quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .quote {
+    width: 50%;
+    padding: 20px;
+  }
+  
+  .headline {
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  /* Additional CSS for Sign-in and Sign-up */
+  .sign-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sign-form {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  
+  .sign-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .sign-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .sign-links {
+    text-align: center;
+  }
+  
+  .sign-links a {
+    margin-right: 10px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .sign-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .quote-container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .quote,
+    .sign-container {
+      width: 100%;
+    }
+  
+    .sign-container {
+      padding: 20px;
+    }
+  }
+  

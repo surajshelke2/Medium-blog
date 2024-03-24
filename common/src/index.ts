@@ -2,12 +2,12 @@ import z from "zod";
 
 export const signUpInput = z.object({
   name: z.string().min(3).max(50),
-  email: z.string().email().min(6).regex(/^\S+$/), 
+  email: z.string().email(),
   password: z.string().min(6),
 });
 
 export const blogPost = z.object({
-  title: z.string().min(3).max(20),
+  title: z.string().min(3),
   content: z.string().min(10),
 });
 
