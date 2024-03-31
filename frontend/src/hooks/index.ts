@@ -11,30 +11,29 @@ export interface Blog {
   };
 }
 
-export function useBlog({ id }: { id: string }) {
+export const useBlog = ({ id }: { id: string }) => {
   const [loading, setLoading] = useState(true);
   const [blog, setBlog] = useState<Blog>();
 
   useEffect(() => {
-    axios
-      .get(`${BACKEND_URL}/api/v1/blogs?id=${id}`, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: localStorage.getItem("token"),
-        },
+      axios.get(`${BACKEND_URL}/api/v1/blog/${id}`, {
+          headers: {
+              Authorization: localStorage.getItem("token")
+          }
       })
-      .then((res) => {
-        setBlog(res.data.blog);
-        console.log(res.data);
-        setLoading(false);
-      });
-  }, [id]);
+          .then(response => {
+              setBlog(response.data);
+              setLoading(false);
+              console.log(blog)
+          })
+  }, [id]);{
 
-  return {
-    loading,
-    blog,
-  };
-}
+    return{
+      blog,
+      loading
+    }
+
+  }}
 
 export function useBlogs() {
   const [loading, setLoading] = useState(true);
@@ -47,8 +46,8 @@ export function useBlogs() {
         }
       })
       .then((res) => {
-        setBlog(res.data.blogs);
-        console.log(res.data);
+        setBlog(res.data);
+        console.log(res);
         setLoading(false);
       });
   }, []);

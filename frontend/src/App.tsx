@@ -1,12 +1,12 @@
 
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Blog from './Pages/BLog/Blog'
 import { ToastContainer, toast } from 'react-toastify';
 import Signup from './Pages/Auth/Signup'
 import Blogs from './Pages/BLog/Blogs'
 import Publish from './Pages/BLog/Publish'
 import { Signin } from './Pages/Auth/Signin'
+import { Blog } from './Pages/BLog/Blog';
 function App() {
 
   return (
