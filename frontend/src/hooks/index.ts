@@ -5,13 +5,13 @@ import { BACKEND_URL } from "../config";
 export interface Blog {
   content: string;
   title: string;
-  id: string;
+  id: Number;
   author: {
     name: string;
   };
 }
 
-export const useBlog = ({ id }: { id: string }) => {
+export const useBlog = ({ id }: { id: Number }) => {
   const [loading, setLoading] = useState(true);
   const [blog, setBlog] = useState<Blog>();
 
@@ -22,9 +22,10 @@ export const useBlog = ({ id }: { id: string }) => {
           }
       })
           .then(response => {
-              setBlog(response.data);
+              setBlog(response.data.post);
+           
               setLoading(false);
-              console.log(blog)
+             
           })
   }, [id]);{
 
@@ -46,8 +47,8 @@ export function useBlogs() {
         }
       })
       .then((res) => {
-        setBlog(res.data);
-        console.log(res);
+        setBlog(res.data.blogs);
+       ;
         setLoading(false);
       });
   }, []);

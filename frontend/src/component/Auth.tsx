@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { SignupProps } from "surajshelke02";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const Auth = ({ type }: { type: "signup" | "signin" }) => {

@@ -1,7 +1,7 @@
 
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import Signup from './Pages/Auth/Signup'
 import Blogs from './Pages/BLog/Blogs'
 import Publish from './Pages/BLog/Publish'
