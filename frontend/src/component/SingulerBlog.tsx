@@ -1,53 +1,49 @@
-import { Blog } from "../hooks"
-import { AppBar } from "./AppBar"
-import { Avatar } from "./BlogCard"
+import { Blog } from "../hooks";
+import { AppBar } from "./AppBar";
+import { Avatar } from "./BlogCard";
 
-
-
-const SingulerBlog = ({blog}:{blog:Blog}) => {
+const SingulerBlog = ({ blog }: { blog: Blog }) => {
   return (
     <>
-    <AppBar here={0}/>
-    <div className="flex justify-center">
-            <div className="grid grid-cols-12 px-10 w-full pt-200 max-w-screen-xl pt-12">
-                <div className="col-span-8">
-                    <div className="text-5xl font-extrabold">
-                        {blog.title}
-                    </div>
-                    <div className="text-slate-500 pt-2">
-                        Post on 2nd December 2023
-                    </div>
-                    <div className="pt-4">
-                        {blog.content}
-                    </div>
-                </div>
-                <div className="col-span-4">
-                    <div className="text-slate-600 text-lg">
-                        Author
-                    </div>
-                    <div className="flex w-full">
-                        <div className="pr-4 flex flex-col justify-center">
-                            <Avatar size="big" name={blog.author.name || "Anonymous"} />
-                        </div>
-                        <div>
-                            <div className="text-xl font-bold">
-                                {blog.author.name || "Anonymous"}
-                            </div>
-                            <div className="pt-2 text-slate-500">
-                                Random catch phrase about the author's ability to grab the user's attention
-                            </div>
-                        </div>
-                    </div>  
-                </div>
-                
+      <AppBar here={0} />
+      <div className="flex justify-center bg-gray-50 min-h-screen py-10">
+        <div className="grid grid-cols-12 gap-8 px-6 w-full max-w-screen-xl">
+      
+          <div className="col-span-8 bg-white p-8 shadow-lg rounded-lg">
+            <h1 className="text-5xl font-extrabold text-gray-800 mb-4">
+              {blog.title}
+            </h1>
+            <p className="text-sm text-slate-500 pb-4">
+              Posted on 2nd December 2023
+            </p>
+            <div className="text-lg text-gray-700 leading-relaxed">
+              {blog.content}
             </div>
+          </div>
+
+          {/* Sidebar Section */}
+          <div className="col-span-4 bg-gray-100 p-6 shadow-md rounded-lg">
+            <h2 className="text-slate-600 text-lg font-semibold mb-4">
+              Author
+            </h2>
+            <div className="flex items-center">
+              <div className="pr-4 flex flex-col justify-center">
+                <Avatar size="big" name={blog.author.name || "Anonymous"} />
+              </div>
+              <div>
+                <p className="text-xl font-bold text-gray-800">
+                  {blog.author.name || "Anonymous"}
+                </p>
+                <p className="pt-2 text-slate-500 text-sm">
+                  A catchphrase that draws users in with the author's unique style and personality.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-    
+      </div>
+    </>
+  );
+};
 
-   
-
-   </>
-  )
-}
-
-export default SingulerBlog
+export default SingulerBlog;

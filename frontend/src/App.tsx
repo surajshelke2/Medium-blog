@@ -7,13 +7,14 @@ import Blogs from './Pages/BLog/Blogs'
 import Publish from './Pages/BLog/Publish'
 import { Signin } from './Pages/Auth/Signin'
 import { Blog } from './Pages/BLog/Blog';
+import Homepage from './Pages/BLog/Home';
 function App() {
 
   return (
     <>
      <BrowserRouter>
         <Routes>
-          
+          <Route path='/' element={<Homepage/>}/>
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/blog/:id" element={<Blog />} />

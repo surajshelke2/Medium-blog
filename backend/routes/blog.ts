@@ -23,16 +23,19 @@ blogRouter.use(async (c, next) => {
   const token = jwt;
   const payload = await verify(token, c.env.JWT_SECRET);
   try {
-    if (!payload) {
-      c.status(401);
-      return c.json({ error: "unauthorized" });
+    if (!payload || typeof payload.id !== "string") {
+      return c.json({ error: "Unauthorized" }, 401);
     }
     c.set("userId", payload.id);
+
     await next();
   } catch (error) {
     console.log("Error in middleware", error);
   }
 });
+
+
+
 
 blogRouter.post("/", async (c: any) => {
   const prisma = new PrismaClient({
@@ -43,7 +46,7 @@ blogRouter.post("/", async (c: any) => {
     const userId = c.get("userId");
 
     let body = await c.req.json();
-    const { title, content ,description } = body;
+    const { title, content, description } = body;
 
     const { success } = z.blogPost.safeParse(body);
 
@@ -54,10 +57,9 @@ blogRouter.post("/", async (c: any) => {
       });
     }
 
-  
     if (!title || !content || !description) {
       return c.status(400).json({
-        message: "Title, content, and description are required"
+        message: "Title, content, and description are required",
       });
     }
 
@@ -66,7 +68,7 @@ blogRouter.post("/", async (c: any) => {
         title,
         content,
         description,
-     
+
         authorId: userId,
       },
     });
@@ -146,8 +148,6 @@ blogRouter.get("/bulk", async (c) => {
     blogs,
   });
 });
-
-
 
 blogRouter.get("/:id", async (c) => {
   const id = c.req.param("id");

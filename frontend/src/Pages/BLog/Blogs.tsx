@@ -5,7 +5,7 @@ import { useBlogs } from "../../hooks";
 const Blogs = () => {
   const { loading, blogs} = useBlogs();
   
-  console.log(blogs);
+
   return (
     <div className="">
       <AppBar here ={0} />

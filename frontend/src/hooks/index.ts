@@ -58,3 +58,22 @@ export function useBlogs() {
     blogs,
   };
 }
+
+
+export async function usePost( content :string) {
+
+     const response = await axios.post(`${BACKEND_URL}/api/v1`,content,{
+       headers :{
+        Authorization:localStorage.getItem("token")
+       }
+     })
+     .then((res)=>{
+        
+         console.log(res);
+     })
+    return {
+
+
+    
+    }
+}
