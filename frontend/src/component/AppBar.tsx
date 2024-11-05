@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Avatar } from "./BlogCard";
-import { usePost } from "../hooks";
+
 
 export function AppBar({ here = 1 }: { here: number }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

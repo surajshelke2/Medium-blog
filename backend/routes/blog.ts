@@ -46,7 +46,7 @@ blogRouter.post("/", async (c: any) => {
     const userId = c.get("userId");
 
     let body = await c.req.json();
-    const { title, content, description } = body;
+    const {title ,description, content} = body;
 
     const { success } = z.blogPost.safeParse(body);
 
@@ -57,7 +57,7 @@ blogRouter.post("/", async (c: any) => {
       });
     }
 
-    if (!title || !content || !description) {
+    if (!title || !content) {
       return c.status(400).json({
         message: "Title, content, and description are required",
       });
@@ -65,10 +65,10 @@ blogRouter.post("/", async (c: any) => {
 
     const blog = await prisma.post.create({
       data: {
-        title,
-        content,
+        title:title,
+        content:content,
+        published:true,
         description,
-
         authorId: userId,
       },
     });

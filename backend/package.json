@@ -4,14 +4,14 @@
     "deploy": "wrangler deploy --minify src/index.ts"
   },
   "dependencies": {
-    "@prisma/client": "^5.21.1",
+    "@prisma/client": "^5.22.0",
     "@prisma/extension-accelerate": "^0.6.3",
     "@tsndr/cloudflare-worker-jwt": "^2.5.1",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "deploy": "^1.0.3",
     "hono": "^4.0.5",
-    "prisma": "^5.21.1",
+    "prisma": "^5.22.0",
     "surajshelke02": "^1.0.0"
   },
   "devDependencies": {

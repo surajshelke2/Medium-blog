@@ -1,26 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import TiptapEditor from "../../component/Editor";
 import { AppBar } from "../../component/AppBar";
-import axios from "axios";
-import { BACKEND_URL } from "../../config";
 
 const Publish: React.FC = () => {
-  const [content, setContent] = useState("");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      if (!content) {
-        try {
-          const res = await axios.get(`${BACKEND_URL}/api/v1/blog`);
-          setContent(res.data.content); 
-        } catch (error) {
-          console.error("Error fetching blog content:", error);
-        }
-      }
-    };
-    
-    fetchData();
-  }, [content]);
+  const [content, setContent] = useState("");
 
   return (
     <>
